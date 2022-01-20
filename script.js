@@ -20,8 +20,10 @@ function generatePassword(){
         if (proceed) {
             numChar= prompt("Please enter the length you want your password to be: ");
           passLen();
-        } else {
+        } 
+        else if (!proceed) {
         //don't proceed
+        alert("You ended the program. Password NOT created! ");
         }
 }
 
