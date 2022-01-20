@@ -13,3 +13,32 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+var numChar;
+
+function generatePassword(){
+        var proceed = confirm("You want a password to be generated for you!");
+        if (proceed) {
+            numChar= prompt("Please enter the length you want your password to be: ");
+          passLen();
+        } else {
+        //don't proceed
+        }
+}
+
+function passLen(){
+    if(numChar<8){
+        alert("Password must be at least 8 characters! ");
+        numChar=prompt("Please enter the length you want your password to be: ");
+        passLen();
+    }
+
+    else if(numChar>128){
+        alert("Password must be less than 128 characters! ");
+        numChar=prompt("Please enter the length you want your password to be: ");
+        passLen();
+
+    }
+    else{
+        console.log("Number of charcters set to: "+numChar);
+    }
+}
