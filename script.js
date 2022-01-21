@@ -15,6 +15,7 @@ generateBtn.addEventListener("click", writePassword);
 
 var numChar;
 var include;
+var specChoice;
 
 function generatePassword(){
         var proceed = confirm("You want a password to be generated for you!");
@@ -43,20 +44,37 @@ function passLen(){
     }
     else{
         console.log("Number of charcters set to: "+numChar);
+        include=confirm("Would you like to include lowercase, uppercase, numeric, and/or special characters?  ");
         incSpec();
     }
 }
 
 function incSpec(){
-    include=confirm("Would you like to include lowercase, uppercase, numeric, and/or special characters?  ");
+    
     
     if(include){
-        alert("You chose to include special characters in your password. ");
-        console.log("Include special characters: "+include);
+        // alert("You chose to include special characters in your password. ");
+        specChoice=prompt("Please enter the character type you'd like to include: lowercase, uppercase, numeric, and/or special characters ");
+
+            if ((specChoice=="lowercase") || (specChoice=="uppercase")||
+            (specChoice=="numeric")|| (specChoice=="special characters")){
+                // switch(specChoice){
+                //     case "lowercase":
+                //         specChoice=
+                console.log("Include special characters: "+include+ " charcter: "+ specChoice);
+            }
+            else{
+                alert("You must select at least one character type! ");
+                include=confirm("Would you like to include lowercase, uppercase, numeric, and/or special characters?  ");
+                incSpec();
+            }    
+       
          //call to function that generates random password
     }
-    else{
-        console.log("Include special characters: "+include);
-        //call to function that generates random password
-    }
+    else {
+        alert("You must select at least one character type! ");
+        include=confirm("Would you like to include lowercase, uppercase, numeric, and/or special characters?  ");
+        incSpec();
+    }    
+    
 }
