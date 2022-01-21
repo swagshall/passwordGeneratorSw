@@ -16,13 +16,21 @@ generateBtn.addEventListener("click", writePassword);
 var numChar;
 var include;
 var specChoice;
+// var charSet= "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+// var specSet=""
 
 function generatePassword(){
         var proceed = confirm("You want a password to be generated for you!");
         if (proceed) {
             numChar= prompt("Please enter the length you want your password to be: ");
           passLen();
-        } 
+
+            // for (var i = 0; i <= numChar; i++) {
+            //     var randomNumber = Math.floor(Math.random() * chars.length);
+            //     password += chars.substring(randomNumber, randomNumber +1);
+            // }
+                    document.getElementById("password").value = password;
+        }
         else if (!proceed) {
         //don't proceed
         alert("You ended the program. Password NOT created! ");
@@ -53,14 +61,11 @@ function incSpec(){
     
     
     if(include){
-        // alert("You chose to include special characters in your password. ");
         specChoice=prompt("Please enter the character type you'd like to include: lowercase, uppercase, numeric, and/or special characters ");
 
             if ((specChoice=="lowercase") || (specChoice=="uppercase")||
             (specChoice=="numeric")|| (specChoice=="special characters")){
-                // switch(specChoice){
-                //     case "lowercase":
-                //         specChoice=
+        
                 console.log("Include special characters: "+include+ " charcter: "+ specChoice);
             }
             else{
