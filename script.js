@@ -15,9 +15,17 @@ generateBtn.addEventListener("click", writePassword);
 
 var numChar;
 var include;
-var specChoice;
-// var charSet= "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-// var specSet=""
+var incLow;
+var incUp;
+var incNum;
+var incSpec;
+var lower= ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];;
+var upper= ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+var numeric= ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var specChar=["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "?", "/", "|"];
+
+
+
 
 function generatePassword(){
         var proceed = confirm("You want a password to be generated for you!");
@@ -53,25 +61,32 @@ function passLen(){
     else{
         console.log("Number of charcters set to: "+numChar);
         include=confirm("Would you like to include lowercase, uppercase, numeric, and/or special characters?  ");
-        incSpec();
+        incSpecial();
     }
 }
 
-function incSpec(){
+function incSpecial(){
     
     
     if(include){
-        specChoice=prompt("Please enter the character type you'd like to include: lowercase, uppercase, numeric, and/or special characters ");
+        incLow=confirm("Would you like to include lowercase letters?  ");
+        console.log("Include lower: " +incLow);
+        incUp=confirm("Would you like to include uppercase letters?  ");
+        console.log("Include upper: " +incUp);
+        incNum=confirm("Would you like to include numeric letters?  ");
+        console.log("Include numbers: " +incNum);
+        incSpec=confirm("Would you like to include special charcters?  ");
+        console.log("Include spec: " +incSpec);
 
-            if ((specChoice=="lowercase") || (specChoice=="uppercase")||
-            (specChoice=="numeric")|| (specChoice=="special characters")){
+            if ((incLow==false) && (incUp==false)&&
+            (incNum==false)&&(incSpec==false)){
         
-                console.log("Include special characters: "+include+ " charcter: "+ specChoice);
-            }
-            else{
                 alert("You must select at least one character type! ");
                 include=confirm("Would you like to include lowercase, uppercase, numeric, and/or special characters?  ");
-                incSpec();
+                incSpecial();
+            }
+            else{
+                console.log("call to generare function" );
             }    
        
          //call to function that generates random password
@@ -79,7 +94,7 @@ function incSpec(){
     else {
         alert("You must select at least one character type! ");
         include=confirm("Would you like to include lowercase, uppercase, numeric, and/or special characters?  ");
-        incSpec();
+        incSpecial();
     }    
     
 }
