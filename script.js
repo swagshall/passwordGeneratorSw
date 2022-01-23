@@ -49,6 +49,7 @@ function generatePassword() {
     else if (!proceed) {
         //don't proceed
         alert("You ended the program. Password NOT created! ");
+        return "Password not created! ";
     }
 }
 
