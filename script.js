@@ -31,10 +31,6 @@ const charSet = {
 }
 
 
-
-
-
-
 function generatePassword() {
     var proceed = confirm("You want a password to be generated for you!");
     if (proceed) {
@@ -46,11 +42,7 @@ function generatePassword() {
             var randomNumber = passChar[Math.floor(Math.random() * passChar.length)];
             password += randomNumber;
         }
-        // console.log(document.getElementById("password").value = password);
-        console.log(password);
-
-
-
+        // console.log(password);
 
         return password;
     }
@@ -74,7 +66,7 @@ function passLen() {
 
     }
     else {
-        console.log("Number of charcters set to: " + numChar);
+        // console.log("Number of charcters set to: " + numChar);
         include = confirm("Would you like to include lowercase, uppercase, numeric, and/or special characters?  ");
         incSpecial();
     }
@@ -85,22 +77,22 @@ function incSpecial() {
 
     if (include) {
         incLow = confirm("Would you like to include lowercase letters?  ");
-        console.log("Include lower: " + incLow);
+        // console.log("Include lower: " + incLow);
         if (incLow == true) {
             [passChar += charSet.lower];
         }
         incUp = confirm("Would you like to include uppercase letters?  ");
-        console.log("Include upper: " + incUp);
+        // console.log("Include upper: " + incUp);
         if (incUp == true) {
             [passChar += charSet.upper];
         }
         incNum = confirm("Would you like to include numeric letters?  ");
-        console.log("Include numbers: " + incNum);
+        // console.log("Include numbers: " + incNum);
         if (incNum == true) {
             [passChar += charSet.numbers];
         }
         incSpec = confirm("Would you like to include special charcters?  ");
-        console.log("Include spec: " + incSpec);
+        // console.log("Include spec: " + incSpec);
         if (incSpec == true) {
             [passChar += charSet.spec];
         }
@@ -111,10 +103,6 @@ function incSpecial() {
             alert("You must select at least one character type! ");
             include = confirm("Would you like to include lowercase, uppercase, numeric, and/or special characters?  ");
             incSpecial();
-        }
-        else {
-            console.log("go back to gen password function");
-            console.log("password chars include: " + passChar);
         }
 
     }
