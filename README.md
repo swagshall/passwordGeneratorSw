@@ -10,6 +10,7 @@ MIT
 
 # Link
  Here is a link to the deployed website: https://swagshall.github.io/passwordGeneratorSw/
+ For the code follow this link: https://github.com/swagshall/passwordGeneratorSw 
 
  # Contact 
 For any questions or comments I can be reached via GitHub or email
